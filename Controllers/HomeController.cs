@@ -1,20 +1,24 @@
-using System.Diagnostics;
 using Harmic.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace Harmic.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly HarmicContext _context;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, HarmicContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+            ViewBag.productCategories = _context.TbProductCategories.ToList();
+            ViewBag.productNew = _context.TbProducts.Where(m => m.IsNew).ToList();
             return View();
         }
 
