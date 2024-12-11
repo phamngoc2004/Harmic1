@@ -1,11 +1,4 @@
-﻿using Microsoft.CodeAnalysis.Options;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Newtonsoft.Json.Linq;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
-using static System.Collections.Specialized.BitVector32;
-using System;
-
-namespace Harmic.Areas.Admin.Models
+﻿namespace Harmic.Areas.Admin.Models
 {
     public class SummerNote
     {
